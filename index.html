@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap-5.20/css/bootstrap.min.css">
     <title>Bootstrap Getting Started</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- navigation bar-->
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light fixed-top shadow">
         <div class="container-fluid">
            <a href="#" class="navbar-brand">Zalego Academy</a> 
            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbardisplaynavigations"  aria-expanded="false" >
@@ -48,12 +49,51 @@
             <button class="btn btn-primary">Learnmore</button>
         </div>
         </div>
+
+        <!--contact us page here-->
+        <div class="row pt-5">
+            <h1>Contact us</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam molestiae necessitatibus temporibus aliquam dicta mollitia. Totam, eius! Temporibus repellat accusamus numquam consectetur rem fugit, ut iste ratione aut totam optio!</p>
+            <form>
+               <div class="row">
+                    <div class="mb-3 col-lg-6">
+                        <label for="firstname" class="form-label">First Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Your First Name">
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                        <label for="lastname" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Your Last Name">
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="mb-3 col-lg-6">
+                        <label for="phonenumber" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" placeholder="Enter Your Phone Number">
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                        <label for="Emailaddress" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" placeholder="Enter Your Email Address">
+                    </div>
+               </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <label for="message" class="form-label">Your message</label>
+                        <textarea cols="30" rows="5" class="form-control"></textarea>
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Send A Message</button>
+
+            </form>
+        </div>
+        <!--End contact us page-->
         <hr>
         <footer>
             &copy; Company 2022
         </footer>
     </div>
-    <script src="bootstrap-5.20/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
     <script src="bootstrap-5.20/js/bootstrap.min.js"></script>
 </body>
 </html>
