@@ -1,3 +1,17 @@
+<?php
+$server="localhost";
+$username="root";
+$password="";
+$database="zalego";
+$conn= mysqli_connect($server,$username,$password,$database);
+if($conn)
+{
+    echo "database connected successfully";
+}
+else{
+    echo "Error occurred";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +68,7 @@
         <div class="row pt-5">
             <h1>Contact us</h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam molestiae necessitatibus temporibus aliquam dicta mollitia. Totam, eius! Temporibus repellat accusamus numquam consectetur rem fugit, ut iste ratione aut totam optio!</p>
-            <form>
+            <form action="index.php"method="POST">
                <div class="row">
                     <div class="mb-3 col-lg-6">
                         <label for="firstname" class="form-label">First Name</label>
@@ -90,7 +104,7 @@
         <!-- About us page here-->
         <div class="row" >
             <div class="bg-secondary bg-opacity-25"><h1>AboutUS</h1>
-             <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores voluptatibus doloribus eius at vel dignissimos, accusamus aliquid reiciendis quia. Quo?</P>
+             <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut nisi dignissimos, voluptates eaque obcaecati incidunt soluta dolorem repudiandae beatae ipsum temporibus, cupiditate saepe? Aut dolorum, mollitia vero doloribus repudiandae doloremque.</P>
             </div>
             <br>
             <br>
@@ -109,7 +123,7 @@
                 <br>
                     <div class="row">
                         <div class="col-lg-4">
-                          <div class="card" style="border-radius: 10px;">
+                          <div class="card" style="border-radius:10px;">
                             <div class="card-body">
                                 <h5 class="card-title">Skill Discovery</h5>
                                   <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil eaque vitae modi dolorem iure quidem quod omnis, consequuntur autem doloribus?</p>
@@ -118,7 +132,7 @@
                         </div>
                         </div>  
                         <br>
-                      <div class="col-lg-4">
+                    <div class="col-lg-4">
                         <div class="card" style="border-radius: 10px;">
                             <div class="card-body">
                                 <h5 class="card-title">Upskilling Program</h5>
@@ -128,16 +142,16 @@
                         </div>     
                        </div>    
                       <br>
-                     <div class="col-lg-4">
-                        <div class="card" style="border-radius: 10px;">
-                            <div class="card-body">
-                                <h5 class="card-title">Path Finding Program</h5>
+                         <div class="col-lg-4">
+                             <div class="card" style="border-radius: 10px;">
+                                 <div class="card-body">
+                                 <h5 class="card-title">Path Finding Program</h5>
                                   <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil eaque vitae modi dolorem iure quidem quod omnis, consequuntur autem doloribus?</p>
                                   <a href="#" class="btn btn-primary">View More</a>                        
-                            </div>
+                                  </div>
+                             </div>
                         </div>
-                     </div>
-                    </div>           
+                </div>           
                 <div class="mb-3 col-lg-6">  
                   <form>
                     <br>
@@ -145,11 +159,10 @@
                     <div class="row">
                         <div class="text-center">
                             <div class="card-body">
-                                <h6 class="card-subtitle mb-2 text-muted">Subscribe to get information, latest new about <br> Zalego Academy.</h6>
+                                <h7 class="card-subtitle mb-2 text-muted">Subscribe to get information, latest new about <br> Zalego Academy.</h7>
                                  <div class="mb-3 col-lg-6">
                                      <input type="email" class="form-control" placeholder="Enter Your Email Address">
                                  </div>
-
                                 <div class="mb-3 col-lg-6">
                                     <button type="submit" class="btn btn-primary">Subscribe</button>                                                           
                                 </div>
@@ -158,6 +171,7 @@
                     </div>
                  </form>
                 </div>
+            </div>    
         <!-- End about us page -->
         <footer>
             &copy; Company 2022
