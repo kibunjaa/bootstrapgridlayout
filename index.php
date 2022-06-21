@@ -3,15 +3,28 @@ $server="localhost";
 $username="root";
 $password="";
 $database="zalego";
-$conn= mysqli_connect($server,$username,$password,$database);
-if($conn)
+$conn = mysqli_connect($server,$username,$password,$database);
+if(isset($_POST["submitbutton"]))
 {
-    echo "database connected successfully";
-}
+    //1. fetch form data
+    $firstname=$_POST["firstname"];
+    $lastname=$_POST["lastname"];
+    $phonenumber=$_POST["phonenumber"];
+    $email=$_POST["email"];
+    $message=$_POST["message"];
+    //2. submit form data
+    $insertData = mysqli_query($conn,"INSERT INTO contactus(firstname,lastname,phonenumber,email,message) VALUES('$firstname','$lastname','$phonenumber','$email','$message') ");
+
+if($insertData)
+{
+    echo "Data submitted successfully";
+} 
 else{
     echo "Error occurred";
 }
+}
 ?>
+<!--  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +37,7 @@ else{
 </head>
 <body>
     <!-- navigation bar-->
-    <nav class="navbar navbar-expand-lg bg-light fixed-top shadow">
+    <!-- <nav class="navbar navbar-expand-lg bg-light fixed-top shadow">
         <div class="container-fluid">
            <a href="#" class="navbar-brand">Zalego Academy</a> 
            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbardisplaynavigations"  aria-expanded="false" >
@@ -38,13 +51,13 @@ else{
                 </div>
             </div>
         </div>
-    </nav>
+    </nav> -->
     <!-- end navigation bar-->
     <main class="p-5 nb-4 bg-light rounded-3px">
         <h1>Welcome,Franziska</h1>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error consequuntur vero pariatur officia saepe quae a? Ea eligendi obcaecati iusto quia, facere dolorem labore possimus perferendis dolore vero impedit ex.</p>
         <button class="btn btn-primary">learnmore</button>
-    </main>
+   </main>
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
@@ -72,31 +85,31 @@ else{
                <div class="row">
                     <div class="mb-3 col-lg-6">
                         <label for="firstname" class="form-label">First Name</label>
-                        <input type="text" class="form-control" placeholder="Enter Your First Name">
+                        <input type="text" name="firstname" class="form-control" placeholder="Enter Your First Name">
                     </div>
                     <div class="mb-3 col-lg-6">
                         <label for="lastname" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" placeholder="Enter Your Last Name">
+                        <input type="text" name="lastname" class="form-control" placeholder="Enter Your Last Name">
                     </div>
                </div>
                <div class="row">
                     <div class="mb-3 col-lg-6">
                         <label for="phonenumber" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" placeholder="Enter Your Phone Number">
+                        <input type="tel" name="phonenumber"class="form-control" placeholder="Enter Your Phone Number">
                     </div>
                     <div class="mb-3 col-lg-6">
                         <label for="Emailaddress" class="form-label">Email Address</label>
-                        <input type="email" class="form-control" placeholder="Enter Your Email Address">
+                        <input type="email" name="email" class="form-control" placeholder="Enter Your Email Address">
                     </div>
                </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <label for="message" class="form-label">Your message</label>
-                        <textarea cols="30" rows="5" class="form-control"></textarea>
+                        <textarea cols="30" name="message" rows="5" class="form-control"></textarea>
                     </div>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary">Send A Message</button>
+                <button type="submit" name="submitbutton" class="btn btn-primary">Send A Message</button>
             </form>
         </div>
         <!--End contact us page-->
@@ -180,4 +193,4 @@ else{
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
     <script src="bootstrap-5.20/js/bootstrap.min.js"></script>
 </body>
-</html>
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
