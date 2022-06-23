@@ -1,29 +1,5 @@
-<?php
-$server="localhost";
-$username="root";
-$password="";
-$database="zalego";
-$conn = mysqli_connect($server,$username,$password,$database);
-if(isset($_POST["submitbutton"]))
-{
-    //1. fetch form data
-    $firstname=$_POST["firstname"];
-    $lastname=$_POST["lastname"];
-    $phonenumber=$_POST["phonenumber"];
-    $email=$_POST["email"];
-    $message=$_POST["message"];
-    //2. submit form data
-    $insertData = mysqli_query($conn,"INSERT INTO contactus(firstname,lastname,phonenumber,email,message) VALUES('$firstname','$lastname','$phonenumber','$email','$message') ");
+<?php include("process.php")?>
 
-if($insertData)
-{
-    echo "Data submitted successfully";
-} 
-else{
-    echo "Error occurred";
-}
-}
-?>
 <!--  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -82,6 +58,17 @@ else{
             <h1>Contact us</h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam molestiae necessitatibus temporibus aliquam dicta mollitia. Totam, eius! Temporibus repellat accusamus numquam consectetur rem fugit, ut iste ratione aut totam optio!</p>
             <form action="index.php"method="POST">
+
+                
+                    <?php 
+                    if($response)
+                    {
+                        include("response.php");
+                    }
+                     ?>                  
+                
+
+                
                <div class="row">
                     <div class="mb-3 col-lg-6">
                         <label for="firstname" class="form-label">First Name</label>
@@ -113,79 +100,7 @@ else{
             </form>
         </div>
         <!--End contact us page-->
-        <hr>
-        <!-- About us page here-->
-        <div class="row" >
-            <div class="bg-secondary bg-opacity-25"><h1>AboutUS</h1>
-             <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut nisi dignissimos, voluptates eaque obcaecati incidunt soluta dolorem repudiandae beatae ipsum temporibus, cupiditate saepe? Aut dolorum, mollitia vero doloribus repudiandae doloremque.</P>
-            </div>
-            <br>
-            <br>
-            <div class="row">
-                <div class="col-lg-6">
-                  <h2>Our Program</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus unde, commodi quibusdam cum assumenda perspiciatis amet impedit quaerat accusamus dolore?</p>
-                </div>
-                    <div class="col-lg-6">
-                        <img src="imagess/book.png" alt="wallpaper">
-                    </div>
-            </div>
-            <br>            
-            <div class="container">
-                <h3>The Program</h3>
-                <br>
-                    <div class="row">
-                        <div class="col-lg-4">
-                          <div class="card" style="border-radius:10px;">
-                            <div class="card-body">
-                                <h5 class="card-title">Skill Discovery</h5>
-                                  <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil eaque vitae modi dolorem iure quidem quod omnis, consequuntur autem doloribus?</p>
-                                  <a href="#" class="btn btn-primary">View More</a>
-                            </div>
-                        </div>
-                        </div>  
-                        <br>
-                    <div class="col-lg-4">
-                        <div class="card" style="border-radius: 10px;">
-                            <div class="card-body">
-                                <h5 class="card-title">Upskilling Program</h5>
-                                  <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil eaque vitae modi dolorem iure quidem quod omnis, consequuntur autem doloribus?</p>
-                                  <a href="#" class="btn btn-primary">View More</a>                   
-                            </div> 
-                        </div>     
-                       </div>    
-                      <br>
-                         <div class="col-lg-4">
-                             <div class="card" style="border-radius: 10px;">
-                                 <div class="card-body">
-                                 <h5 class="card-title">Path Finding Program</h5>
-                                  <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil eaque vitae modi dolorem iure quidem quod omnis, consequuntur autem doloribus?</p>
-                                  <a href="#" class="btn btn-primary">View More</a>                        
-                                  </div>
-                             </div>
-                        </div>
-                </div>           
-                <div class="mb-3 col-lg-6">  
-                  <form>
-                    <br>
-                    <br>
-                    <div class="row">
-                        <div class="text-center">
-                            <div class="card-body">
-                                <h7 class="card-subtitle mb-2 text-muted">Subscribe to get information, latest new about <br> Zalego Academy.</h7>
-                                 <div class="mb-3 col-lg-6">
-                                     <input type="email" class="form-control" placeholder="Enter Your Email Address">
-                                 </div>
-                                <div class="mb-3 col-lg-6">
-                                    <button type="submit" class="btn btn-primary">Subscribe</button>                                                           
-                                </div>
-                             </div>
-                        </div>    
-                    </div>
-                 </form>
-                </div>
-            </div>    
-        <!-- End about us page -->
+        <hr>       
         <footer>
             &copy; Company 2022
         </footer>
